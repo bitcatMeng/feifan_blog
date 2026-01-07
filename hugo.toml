@@ -1,13 +1,286 @@
-# 必须包含二级目录名，末尾记得加斜杠
-baseURL = 'https://bitcatMeng.github.io/feifan_blog/'
-languageCode = 'en-us'
-title = '非凡哥编程'
-theme = "PaperMod"
+# 网站基础配置
+baseURL = 'https://bitcatMeng.github.io/feifan_blog/'  # 网站的基础 URL
+title = '非凡哥编程'  # 网站标题
+theme = "FixIt"  # 使用的主题
+languageCode = "zh-cn"  # 网站语言代码
+defaultContentLanguage = "zh-cn"  # 默认内容语言
+enableRobotsTXT = true  # 启用 robots.txt 文件
+hasCJKLanguage = true  # 网站包含中日韩文字
+pygmentsCodefences = true  # 启用代码块高亮
+pygmentsUseClasses = true  # 使用 CSS 类进行代码高亮
+pygmentsStyle = "monokai"  # 代码高亮样式
+disableKinds = ["taxonomy"]  # 禁用的页面类型
+
+#------------FixIt 主题 必要配置-----------
+# 标记语言配置
+[markup]
+_merge = "shallow"  # 合并默认配置
+
+  # 代码高亮配置
+  [markup.highlight]
+  codeFences = true  # 启用代码块
+  lineNos = true  # 显示行号
+  lineNumbersInTable = true  # 在表格中显示行号
+  noClasses = false  # 不使用内联样式，使用 CSS 类
+  guessSyntax = true  # 自动猜测代码语言
+  tabWidth = 4  # 制表符宽度
+
+  # Goldmark 渲染器配置
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+    typographer = true  # 启用排版功能
+    linkify = true  # 自动链接 URL
+    [markup.goldmark.renderer]
+    unsafe = true  # 允许使用 HTML
+
+  # 目录配置
+  [markup.tableOfContents]
+  startLevel = 2  # 目录开始层级
+  endLevel = 6  # 目录结束层级
+  ordered = false  # 不使用有序列表
+
+# 输出格式配置
+[outputs]
+_merge = "shallow"  # 合并默认配置
+home = ["HTML", "RSS", "JSON"]  # 首页输出格式
+
+# 分类系统配置
+[taxonomies]
+tag = "tags"  # 标签分类
+category = "categories"  # 分类分类
+
+#------------FixIt 主题 必要配置-----------
+
+#------------FixIt 主题 菜单配置-----------
+[menu]
+
+[[menu.main]]
+identifier = "home"  # 菜单项唯一标识符
+name = "首页"  # 菜单项显示名称
+url = "/"  # 菜单项链接地址
+title = "首页"  # 菜单项悬停提示
+weight = 1  # 菜单项排序权重
+[menu.main.params]
+icon = "home"  # 菜单项图标
+
+[[menu.main]]
+identifier = "posts"  # 菜单项唯一标识符
+name = "文章"  # 菜单项显示名称
+url = "/posts/"  # 菜单项链接地址
+title = "文章"  # 菜单项悬停提示
+weight = 2  # 菜单项排序权重
+[menu.main.params]
+icon = "book"  # 菜单项图标
+
+[[menu.main]]
+identifier = "tags"  # 菜单项唯一标识符
+name = "标签"  # 菜单项显示名称
+url = "/tags/"  # 菜单项链接地址
+title = "标签"  # 菜单项悬停提示
+weight = 3  # 菜单项排序权重
+[menu.main.params]
+icon = "tags"  # 菜单项图标
+
+[[menu.main]]
+identifier = "categories"  # 菜单项唯一标识符
+name = "分类"  # 菜单项显示名称
+url = "/categories/"  # 菜单项链接地址
+title = "分类"  # 菜单项悬停提示
+weight = 4  # 菜单项排序权重
+[menu.main.params]
+icon = "folder"  # 菜单项图标
+
+[[menu.main]]
+identifier = "about"  # 菜单项唯一标识符
+name = "关于"  # 菜单项显示名称
+url = "/about/"  # 菜单项链接地址
+title = "关于"  # 菜单项悬停提示
+weight = 5  # 菜单项排序权重
+[menu.main.params]
+icon = "user"  # 菜单项图标
+
+#------------FixIt 主题 菜单配置-----------
 
 [params]
-    env = "production" # 生产环境
-    showCodeCopyButtons = true # 显示代码复制按钮
-    displayFullContent = false # 列表页不显示全文
-
-[minify]
- #   disableHTML = true  # 禁用 HTML 压缩，但保留 CSS 和 JS 压缩
+  # FixIt 主题版本（可选）
+  version = "0.3.x"
+  
+  # 作者信息
+  [params.author]
+    name = "非凡哥"  # 作者名称
+  description = "专注于编程技术分享的个人博客"  # 网站描述
+  keywords = ["编程", "技术", "博客", "程序员", "开发", "前端", "后端"]  # 网站关键词
+  
+  # 网站图标
+  favicon = "/favicon.ico"  # 网站图标路径
+  
+  [params.header]
+    # 桌面端导航栏模式 ("fixed", "normal", "auto")
+    desktopMode = "fixed"  # 桌面端导航栏模式
+    # 移动端导航栏模式 ("fixed", "normal", "auto")
+    mobileMode = "auto"  # 移动端导航栏模式
+    # 导航栏标题
+    [params.header.title]
+      name = "非凡哥编程"  # 导航栏标题名称
+    # 导航栏 subtitle
+    [params.header.subtitle]
+      name = "Programming is an art"  # 导航栏副标题
+    
+  [params.footer]
+    # 页脚信息
+    enable = true  # 启用页脚
+    # 页脚版权信息
+    copyright = "© 2026 非凡哥编程. All rights reserved."  # 版权声明
+    # 页脚是否显示 Hugo 和主题信息
+    hugo = true  # 显示 Hugo 和主题信息
+    # 页脚自定义内容
+    custom = '<a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> + <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="noopener noreferrer">FixIt</a>'  # 自定义页脚内容
+    
+  [params.section]
+    # 文章列表页显示摘要
+    summary = true  # 显示文章摘要
+    # 文章列表页每页显示文章数量
+    paginate = 10  # 每页显示文章数量
+    
+  [params.page]
+    # 开启侧边 TOC
+    [params.page.toc]
+      enable = true  # 启用侧边目录
+      keepStatic = false  # 设为 false 则会在侧边悬浮
+      auto = true  # 自动生成目录
+      # TOC 标题层级
+      startLevel = 2  # 目录开始层级
+      endLevel = 5  # 目录结束层级
+      
+    [params.page.code]
+      # 代码复制按钮
+      copy = true  # 启用代码复制功能
+      # 代码块最大高度（防止过长）
+      maxShownLines = 50  # 代码块最大显示行数
+      # 代码块折叠
+      fold = true  # 启用代码块折叠功能
+      # 默认展开代码块
+      unfold = true  # 默认展开代码块
+      # 代码块主题
+      theme = "monokai"  # 代码高亮主题
+      
+    [params.page.math]
+      # 数学公式支持
+      enable = true  # 启用数学公式支持
+      # 数学公式渲染引擎 ("katex", "mathjax")
+      engine = "katex"  # 数学公式渲染引擎
+      # 是否在所有页面启用数学公式
+      everyPage = false  # 仅在需要时启用数学公式
+      
+    [params.page.comment]
+      # 评论系统支持
+      enable = true  # 启用评论系统
+      # Disqus 评论
+      [params.page.comment.disqus]
+        enable = false  # 禁用 Disqus 评论
+        shortname = ""  # Disqus 站点标识符
+      # Gitalk 评论
+      [params.page.comment.gitalk]
+        enable = true  # 启用 Gitalk 评论
+        owner = "bitcatMeng"  # GitHub 仓库所有者
+        repo = "feifan_blog"  # GitHub 仓库名称
+        clientId = "your-client-id"  # GitHub OAuth 客户端 ID
+        clientSecret = "your-client-secret"  # GitHub OAuth 客户端密钥
+        admin = ["bitcatMeng"]  # Gitalk 管理员
+        id = "location.pathname"  # 页面标识符
+        labels = ["Gitalk"]  # 评论标签
+        perPage = 15  # 每页评论数量
+        pagerDirection = "last"  # 分页方向
+        createIssueManually = false  # 自动创建 Issue
+        distractionFreeMode = false  # 专注模式
+      # 腾讯云评论
+      [params.page.comment.tencent]
+        enable = false  # 禁用腾讯云评论
+        appId = ""  # 腾讯云评论 App ID
+        appKey = ""  # 腾讯云评论 App Key
+      
+  [params.search]
+    # 搜索功能
+    enable = true  # 启用搜索功能
+    # 搜索类型 ("lunr", "algolia", "fuse")
+    type = "lunr"  # 搜索类型
+    # 搜索站位符
+    placeholder = "搜索文章..."  # 搜索输入框占位符
+    # 最大结果数
+    maxResultLength = 10  # 最大搜索结果数量
+    # 结果内容长度
+    snippetLength = 50  # 搜索结果摘要长度
+    # 高亮标签
+    highlightTag = "em"  # 搜索结果高亮标签
+    # 是否在新窗口打开
+    absoluteURL = false  # 在当前窗口打开搜索结果
+    # 启用热键 (Ctrl + K)
+    hotkey = true  # 启用搜索热键
+    
+  [params.share]
+    # 分享功能
+    enable = true  # 启用分享功能
+    # 分享类型 ("addtoany", "sharethis", "custom")
+    type = "addtoany"  # 分享类型
+    # AddToAny 配置
+    [params.share.addtoany]
+      domSelector = ".share"  # AddToAny 容器选择器
+    # ShareThis 配置
+    [params.share.sharethis]
+      pubid = ""  # ShareThis 发布 ID
+      
+  [params.social]
+    # 社交账号
+    enable = true  # 启用社交账号链接
+    # GitHub
+    github = "bitcatMeng"  # GitHub 用户名
+    # Twitter
+    twitter = ""  # Twitter 用户名
+    # LinkedIn
+    linkedin = ""  # LinkedIn 用户名
+    # Email
+    email = ""  # 邮箱地址
+    # 微信
+    [params.social.wechat]
+      enable = true  # 启用微信二维码
+      qrcode = "/wechat-qrcode.png"  # 微信二维码图片路径
+      title = "微信"  # 微信链接标题
+    # 知乎
+    [params.social.zhihu]
+      enable = true  # 启用知乎链接
+      id = ""  # 知乎用户 ID
+      title = "知乎"  # 知乎链接标题
+      
+  [params.image]
+    # 图片懒加载
+    lazyload = true  # 启用图片懒加载
+    # 图片 Fancybox
+    fancybox = true  # 启用图片 Fancybox 效果
+    
+  [params.seo]
+    # SEO 优化
+    [params.seo.baidu]
+      # 百度统计
+      id = ""  # 百度统计 ID
+    [params.seo.google]
+      # Google Analytics
+      id = ""  # Google Analytics ID
+      # Google AdSense
+      adSenseId = ""  # Google AdSense ID
+    [params.seo.bing]
+      # Bing 验证
+      id = ""  # Bing 验证 ID
+    [params.seo.yandex]
+      # Yandex 验证
+      id = ""  # Yandex 验证 ID
+      
+  [params.pageview]
+    # 页面访问统计
+    enable = true  # 启用页面访问统计
+    # 统计类型 ("leancloud", "busuanzi")
+    type = "busuanzi"  # 页面访问统计类型
+    # LeanCloud 配置
+    [params.pageview.leancloud]
+      appId = ""  # LeanCloud App ID
+      appKey = ""  # LeanCloud App Key
+      serverURL = ""  # LeanCloud 服务器 URL
