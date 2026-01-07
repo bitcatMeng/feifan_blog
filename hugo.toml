@@ -1,0 +1,9 @@
+baseURL = 'https://bitcatmeng.github.io/feifan_blog'
+languageCode = 'en-us'
+title = '非凡哥编程'
+theme = "PaperMod"
+
+[params]
+    env = "production" # 生产环境
+    showCodeCopyButtons = true # 显示代码复制按钮
+    displayFullContent = false # 列表页不显示全文
