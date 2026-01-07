@@ -1,4 +1,5 @@
-baseURL = 'https://bitcatmeng.github.io/feifan_blog'
+# 必须包含二级目录名，末尾记得加斜杠
+baseURL = 'https://bitcatMeng.github.io/feifan_blog/'
 languageCode = 'en-us'
 title = '非凡哥编程'
 theme = "PaperMod"
