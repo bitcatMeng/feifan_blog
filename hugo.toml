@@ -10,4 +10,4 @@ theme = "PaperMod"
     displayFullContent = false # 列表页不显示全文
 
 [minify]
-    disableHTML = true  # 禁用 HTML 压缩，但保留 CSS 和 JS 压缩
+ #   disableHTML = true  # 禁用 HTML 压缩，但保留 CSS 和 JS 压缩
