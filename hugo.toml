@@ -8,3 +8,6 @@ theme = "PaperMod"
     env = "production" # 生产环境
     showCodeCopyButtons = true # 显示代码复制按钮
     displayFullContent = false # 列表页不显示全文
+
+[minify]
+    disableHTML = true  # 禁用 HTML 压缩，但保留 CSS 和 JS 压缩

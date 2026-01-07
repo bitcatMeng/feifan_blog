@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/feifan_blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo搭建博客</title>
-      <link>http://localhost:1313/feifan_blog/posts/my-first-post/</link>
+      <link>http://localhost:1313/feifan_blog/posts/1-hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Wed, 07 Jan 2026 20:27:33 +0800</pubDate>
-      <guid>http://localhost:1313/feifan_blog/posts/my-first-post/</guid>
+      <guid>http://localhost:1313/feifan_blog/posts/1-hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
       <description>&lt;h1 id=&#34;快速搭建博客&#34;&gt;快速搭建博客&lt;/h1&gt;
 &lt;h2 id=&#34;第一步安装-hugo&#34;&gt;第一步：安装 Hugo&lt;/h2&gt;
 &lt;p&gt;在 Mac 上，最推荐的方式是使用 Homebrew。&lt;/p&gt;
